@@ -2,5 +2,10 @@
   "name": "foundation-libsass-template",
   "dependencies": {
     "foundation": "zurb/bower-foundation"
+  },
+  "devDependencies": {
+    "compass-mixins": "~1.0.0",
+    "animate-sass": "~0.5.0",
+    "masonry": "~3.1.5"
   }
 }

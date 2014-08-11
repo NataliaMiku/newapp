@@ -1,5 +1,13 @@
 @import "settings";
 @import "foundation";
+@import "animate";
+//@import "animate-sass/animate";
+@import "partials/typography";
+@import "partials/animations";
+@import "partials/base";
+@import "partials/media";
+@import "modules/slider/slider";
+
 
 // Or selectively include components
 // @import

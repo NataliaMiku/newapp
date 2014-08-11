@@ -1,0 +1,533 @@
+@import "../helpers/mixins";
+@import "../helpers/variables";
+//include fonts
+@import "../fonts/font-awesome/font-awesome";
+
+
+
+//custom css/fonts
+@include webfont('museo','fonts/museo/museo');
+@include webfont('museo300','fonts/museo/museo-300');
+@include webfont('museo500','fonts/museo/museo-500');
+@include webfont('museo700','fonts/museo/museo-700');
+@include webfont('icomoon','fonts/icomoon/icomoon');
+@include webfont('alpine1', 'fonts/alpine/alpine1');
+@include webfont('alpine2', 'fonts/alpine/alpine2');
+@include webfont('alpine', 'fonts/alpine/alpine');
+@include webfont('ecoicons', 'fonts/ecoicons/ecoicons');
+@include webfont('latoregular', 'fonts/lato/Lato-Reg');
+@include webfont('Lato-Light', 'fonts/lato/Lato-Light');
+@include webfont('Lato-Hairline', 'fonts/lato/Lato-Hairline');
+@include webfont('grandhotel', 'fonts/grandhotel/grandhotel'); 
+@include webfont('belizioregular', 'fonts/belizio/belizioregular'); 
+
+
+
+//declare custom fonts
+$museo: 'museo';
+$museo300: 'museo300';
+$museo500: 'museo500';
+$museo700: 'museo700';
+$icomoon: 'icomoon';
+$a1: 'alpine1';
+$a2: 'alpine2';
+$alpine: 'alpine';
+$ecoicons: 'ecoicons';
+$latoReg: 'latoregular';
+$latoLight: 'Lato-Light';
+$latoHair: 'Lato-Hairline';
+$grandhotel: 'grandhotel';
+$belizioregular: 'belizioregular';
+
+
+
+
+
+//**========= ORBIT========***//
+
+.banner-title {
+
+    padding: 0 4em;
+
+    h2 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+        display: inline-block;            
+    }
+
+    .fa {
+        font-size: .7rem;
+        margin: 0 10px;
+        vertical-align: middle;
+    }
+
+    h1 {
+        font-family: $museo;
+        font-size: 6em;
+        letter-spacing: 4px;
+        margin: 0;
+        line-height: 1.3;
+    }
+}
+
+.banner-link {
+    a {
+        text-transform: uppercase;
+        position: absolute;
+        z-index: 6;
+        bottom: 6%;
+        right: 5%;
+        color: $body-font-light;
+        &:hover {
+            color: $bg-nav;
+        }
+    }
+
+}
+
+
+.orbit-container {
+		.orbit-prev span,
+    	.orbit-next span {
+    			font-family: $icomoon;
+    			font-size: 1.5em;
+		    	text-indent: 0;
+    	}
+}
+
+/* ==========================================================================
+   NAVIGATION STYLES
+   ========================================================================== */
+
+span.a1 {
+        font-family: $a1;
+} 
+
+span.a2 {
+        font-family: $a2;
+}
+
+span.alpine {
+        font-family: $alpine;
+}
+
+.gn-menu-main { 
+        
+        a {
+            display: block;
+            color: $main-font-nav;
+        }
+        
+        & > li > a {
+                padding: 0 30px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: bold;
+
+                &.icon-home {
+                     font-weight: normal;
+                     font-size: 1em;   
+                }
+        }    
+}
+
+.no-touch {
+    .gn-menu-main a:hover,
+    .gn-menu li.gn-search-item:hover,
+    .gn-menu li.gn-search-item:hover a {
+        background: $main-font-nav;
+        color: $main-white;
+    }
+}
+
+.gn-menu-main,
+.gn-menu-main ul {
+        margin: 0;
+        padding: 0;
+        color: $main-font-nav;
+        //font-weight: 300;
+        font-family: $latoLight;
+        line-height: $topbar-height;
+        font-size: 1.1rem;
+}
+
+
+
+.gn-icon-help::before {
+        content: "\e000";
+}
+
+.gn-icon-earth::before {
+        content: "\e004";
+}
+
+.gn-icon-cog::before {
+        content: "\e006";
+}
+
+.gn-icon-search::before {
+        content: "\e005";
+}
+
+.gn-icon-download::before {
+        content: "\e007";
+}
+
+.gn-icon-photoshop::before {
+        content: "\e001";
+}
+
+.gn-icon-illustrator::before {
+        content: "\e002";
+}
+
+.gn-icon-archive::before {
+        content: "\e00d";
+}
+
+.gn-icon-article::before {
+        content: "\e003";
+}
+
+.gn-icon-pictures::before {
+        content: "\e008";
+}
+
+.gn-icon-videos::before {
+        content: "\e009";
+}
+
+.icon-services {
+        font-family: $icomoon;
+        font-size: 1.6em;
+        font-weight: normal;
+        @include text-shadow(rgba(#000, .3) 0px 1px 1px);
+}
+
+.icon-services-design::before {
+        content: "\e631";
+}
+
+.icon-services-identity::before {
+        content: "\e632";
+}
+
+.icon-services-print::before {
+        content: "\e63d";
+}
+
+.icon-services-development::before {
+        content: "\e62c";
+}
+
+.icon-home::before {
+    content: "\e850";
+    font-weight: normal;
+}
+
+.gn-submenu li a {
+    color: $main-border-color;
+}
+
+/* placeholder */
+.gn-search {
+    @include placeholder {
+            color: $main-font-nav;
+    }
+}
+
+/* hide placeholder when active in Chrome */
+.gn-search:focus::-webkit-input-placeholder,
+.no-touch .gn-menu li.gn-search-item:hover .gn-search:focus::-webkit-input-placeholder {
+        color: transparent;
+}
+
+input.gn-search:focus {
+        cursor: text;
+}
+
+
+
+
+
+input.gn-search {
+    position: relative;
+    z-index: 10;
+    padding-left: $topbar-height;
+    outline: 0;
+    border: none;
+    background: 0 0;
+    position: relative;
+    color: $main-font-nav;
+    font-family: $latoLight;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.top-bar input {
+        top: 0;
+}
+
+input[type="search"] {
+        -webkit-appearance: textfield !important;        
+        @include box-sizing(content-box);
+}
+
+
+
+.gn-icon::before {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    text-transform: none;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-family: $ecoicons;
+    line-height: 1;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.no-touch .gn-menu li.gn-search-item:hover input.gn-search {
+        color: $main-bg-nav;
+}
+
+/* placeholder */
+.no-touch .gn-menu li.gn-search-item:hover .gn-search {
+        @include placeholder {
+                color: $main-bg-nav;
+        }
+}
+
+
+
+/* ==========================================================================
+   MAIN SECTION'S STYLES
+========================================================================== */
+
+
+
+
+//**========= ABOUT-SECTION========***//
+
+ul.services-boxes {
+    & > li {
+        h5 a {
+            text-transform: uppercase;
+            @include text-shadow(rgba(#000, .3) 0px 1px 1px);
+        }
+        & > a {
+
+            font-weight: normal;
+        }
+    }
+}
+
+ul.services-boxes {
+        & > li {
+
+                p {
+                        text-align: justify;
+                        padding: 0 1em;
+                }
+        }
+}
+
+#about-mid-section {
+        .wp1 {
+
+                h1 {
+                        
+                        font-size: 6em;
+                        letter-spacing: -0.1em;
+                        margin: 0;
+                        color: $main-font-nav;
+                        @include text-shadow(rgba(#000, .3) 0px 1px 1px);
+                        span.icon-skills:before {
+                                font-family: $icomoon;
+                                content: "\e033";
+                                font-size: 0.8em;
+                                margin-right: 0.25em;
+                        }
+                }
+
+                p {
+                        text-align: justify;
+                        @include column-count(2);
+                        @include column-gap(3em);
+                }
+
+                h4.box-header {
+                        padding: 2em 0;
+                        & > span {
+                                //border-color:;
+                                padding: .5em;
+                                font-family: $latoReg;
+                                //font-size: 16px;
+                                //font-weight: 400;
+                                letter-spacing: .15em;
+                                line-height: 1.5;
+                                text-transform: uppercase;
+                                border: $star-dust solid 3px;
+                        }    
+                }
+
+                .text-liner {
+                        & > span {
+                                display: inline-block;
+                                width: 10em;
+                                height: 3px;
+                                margin: 1em 0;
+                        }
+                        .star-dust-color {
+                                background-color: $star-dust;
+                        }
+                } 
+                
+                
+        }
+        
+}
+
+/*-------------------------//
+//                         //
+//         SLIDER          //
+//                         //
+---------------------------*/
+
+
+a.expand { 
+
+    text-decoration: none;
+    text-align: center; 
+    color: $star-dust;
+    //font-family: $latoReg;
+    font-family: $museo500;
+    //font-weight: 600;
+    //line-height: 2; 
+    font-size: 1.2em; 
+    text-transform: uppercase; 
+    &:hover {
+        color: #fff;
+    } 
+}
+
+.caption-slides {
+    margin-left: 1em;
+    text-transform: uppercase;
+
+    h2 {
+        font-family: $museo500;
+        margin-bottom: 0;
+        //color: $slider-bg-2;
+        color: $red;
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-family: $museo300;
+        margin-top: 0;
+        //color: $bg-nav;
+        color: $star-dust;
+        font-size: 1em;
+    }
+}  
+
+        .owl-buttons {
+            font-family: $icomoon;
+            color: $star-dust;
+            //font-size: 2em;
+
+            &:hover {
+                //color: #fff;
+
+            }
+        }
+
+
+        .owl-prev:before {
+                //background-image: url(../images/slider/left.png);
+                content: "\e743";
+                //content: url(../images/slider/left.png);
+
+        }
+
+        .owl-next:before {
+                content: "\e73f";
+                //content: url(../images/slider/right.png);
+        }
+
+
+        span.next-slide{
+                
+                font-size: 2.6em;
+                width: 2.5em;
+                height: 2.5em;
+                padding: 0.15em 0.25em 0;
+                //cursor: pointer;
+                cursor: url(../images/cursors/gest-left.png), auto;
+                //background-color: $main-yellow;
+                
+                &:hover {
+                    content: 'next slide';
+                    //color: rgba($primary-color, .6);
+                }
+
+                &:before {
+                        //content: '\e08c'
+                        content: url(../images/add-icon.png);
+                }
+        } 
+
+
+
+section#portfolio-boxes {
+
+    li {
+        &.grid-block {
+               /*  span.next-slide{
+                   background-color: $pink;
+                   &:hover {
+                           background-color: scale-color($pink, $lightness: -35%);
+                   }
+               } */
+
+                .text-descr-box {
+                    padding: 1.5em 2em;
+                }
+
+                .border-corners {
+                   
+                    h3 {
+                        color: $main-white;
+                        font-family: $latoReg;
+                        text-transform: uppercase;
+                        font-size: 1.3em;
+                    }
+                    h4 {
+                        color: rgba($main-white,0.7);
+                        //color: $text-darkest-pink;
+                        font-family: $latoLight;
+                        text-align: justify;
+                        font-size: 1.1em;
+                        margin-bottom: 0;
+                        //font-family: $grandhotel; 
+                    }
+                }
+        
+        }
+
+    }
+    
+        
+    
+
+    a.side-shifter { 
+            //cursor: url(../images/cursors/pointer-yellow.png), auto;
+            cursor: url(../images/cursors/plus-white.png), auto; 
+    }
+    
+
+
+}       

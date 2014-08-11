@@ -1,0 +1,38 @@
+@import "compass";
+
+//font mixin
+@mixin webfont($family,$src,$weight: normal,$style: normal) {
+    @font-face {
+        font-family: $family;
+        src: url('#{$src}.eot'); // IE9 compat
+        src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+            url('#{$src}.woff') format('woff'), // standards
+            url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+            url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+
+        font-style: $style;
+        font-weight: $weight;
+    }
+}
+
+/* Opacity*/
+@mixin transparency($opacity){
+    @include opacity( $opacity);
+}
+
+@mixin placeholder{
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+
+@mixin pointer-events($type: none) {
+  $type: unquote($type);
+  @include experimental(pointer-events, $type,
+    -moz, -webkit, not -o, not -ms, -khtml, official
+  );
+}
+
+

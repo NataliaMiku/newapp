@@ -1,0 +1,260 @@
+//@import "../helpers/mixins";
+@import "compass";
+@import "animate";
+//@import "animation";
+
+body {
+    -webkit-backface-visibility: hidden; // Addresses a small issue in webkit: http://bit.ly/NEdoDq
+}
+
+//$base-duration: 1.5s;
+
+.animated {
+    @include animate-prefixer(animation-duration, $base-duration);
+    @include animate-prefixer(animation-fill-mode, both);
+
+    &.hinge {
+        @include animate-prefixer(animation-duration, $base-duration * 2);
+    }
+}
+
+.wp1, 
+.wp2, 
+.wp3, 
+.wp4, 
+.wp5, 
+.wp6,
+.wp7 { 
+		visibility: hidden; 
+}
+
+
+.faded {
+        visibility: hidden;
+}
+
+.bounceInLeft,
+.bounceInRight, 
+.bounceInUp, 
+.fadeInUp, 
+.fadeInDown, 
+.fadeInUpDelay,  
+.fadeInUpD,
+.fadeInUpBig, 
+.fadeInLeft, 
+.fadeInRight { 
+		visibility: visible; 
+}
+
+.delay-03s {
+        @include animation-delay(0.3s);
+}
+
+.delay-05s {
+		@include animation-delay(0.5s);
+}
+
+.delay-07s {
+        @include animation-delay(0.7s); 
+}
+
+.delay-1s {
+		@include animation-delay(1s); 
+}
+
+.delay-2s {
+        @include animation-delay(2s); 
+}
+
+.long-animation {
+    @include animation-duration(2s);
+}
+
+.banner-title h1,
+.banner-title h2,
+.animated-canvas > [class*="canvas-"] {
+        @include animate-prefixer(animation-duration, $base-duration);
+        @include animate-prefixer(animation-fill-mode, both);
+}
+
+
+.banner-title h1 {
+        //@include animation-delay(0);
+}
+
+.banner-title h2 {
+       // @include animation-delay(0);
+}
+
+.canvas-laptop {
+       // @include animation-delay(0s);
+       // @include animate-prefixer(animation-duration, $base-duration);
+       // @include animate-prefixer(animation-fill-mode, both);
+}
+
+
+
+/* .bounceInLeft {
+      @include ;
+}
+ */
+
+
+/* ==========================================================================
+   BANNER ELEMENTS
+   ========================================================================== */
+
+.orbit-container {
+    
+       
+
+        li {
+
+            .animated-canvas {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+            }
+
+                  
+
+
+        }
+}
+/* .banner-title h1,
+          .banner-title h2,
+          [class*="canvas-"] {                    
+                  //@include transition(all 2s cubic-bezier(0.15, 0.65, 0.4, 1));
+                  @include animation-duration(1.5s);
+                  @include animation-fill-mode(both);
+          } */
+
+                /* #canvas-laptop img {
+                        max-height: 100%;
+                        max-width: 100%;
+                } */
+                
+                #canvas-ipad,
+                #canvas-coffee,
+                #canvas-iphone,
+                #canvas-tablet,
+                #canvas-pen,
+                #canvas-notebook,
+                #canvas-glasses, 
+                #canvas-pen-ball, 
+                #canvas-pencil, 
+                #canvas-envelop, 
+                #canvas-packet, 
+                #canvas-calc, 
+                #canvas-razor, 
+                #canvas-wood,
+                #canvas-diary,
+                #canvas-iphone-gray,
+                #canvas-sticky,
+                #canvas-camera,
+                #canvas-memory {
+                        position: absolute;
+
+                        /* & > img {
+                            max-height: 100%;
+                            max-width: 100%;
+                        } */
+                        
+                }
+
+
+
+                #canvas-ipad {
+                        left: 13%;
+                        top: 5%;                    
+                }
+
+                #canvas-coffee {
+                        right: 18%;
+                        top: 10%;
+                }
+                #canvas-iphone {
+                        left: 32%;
+                        top: 47%;                  
+                }
+                #canvas-tablet {
+                        right: 18%;
+                        top: 50%;
+                }
+                #canvas-pen {
+                        right: 25%;
+                        top: 75%;
+                }                
+
+                //slide -2
+                #canvas-notebook {
+                        left: 13%;
+                        top: 40%;                    
+                }
+
+                #canvas-glasses {
+                        left: 17%;
+                        top: 66%;
+                }
+
+                #canvas-pen-ball {
+                        left: 23%;
+                        top: 28%;
+                }
+
+                #canvas-pencil {
+                        left: 25%;
+                        top: 24%;
+                }
+
+                #canvas-envelop {
+                        right: 20%;
+                        top: 55%;
+                }
+                #canvas-packet {
+                        right: 14%;
+                        top: 45%;
+                }
+                #canvas-calc {
+                        right: 18%;
+                        top: 65%;
+                }
+
+                #canvas-razor {
+                        right: 34%;
+                        top: 48%;
+                }
+
+                #canvas-wood {
+                        right: 33%;
+                        top: 33%;
+                }
+                //slide3
+
+                #canvas-diary {
+                        right: 14%;
+                        top: 45%;
+                }
+
+                #canvas-iphone-gray {
+                        right: 18%;
+                        top: 55%;
+                }
+
+                #canvas-memory {
+                        right: 33%;
+                        top: 48%;
+                }
+
+                #canvas-sticky {
+                        left: 27%;
+                        top: 70%;
+                }
+
+                #canvas-camera {
+                        left: 13%;
+                        top: 35%;                    
+                }
+          
+
